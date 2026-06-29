@@ -16,8 +16,7 @@ h1{
 }
 
 .calculator{
-    width:420px;
-    height:630px;
+    width:415px;
     margin:auto;
     background:black;
     padding:25px;
@@ -99,7 +98,7 @@ h2{
     }
 
     .buttons button{
-        height:65px;
+        height:60px;
         font-size:25px;
     }
 
@@ -131,13 +130,13 @@ h2{
     }
 
     .buttons button{
-        height:55px;
+        height:50px;
         font-size:22px;
     }
 
     .top-buttons button{
-        width:60px;
-        height:45px;
+        width:55px;
+        height:40px;
         font-size:18px;
     }
 
@@ -166,7 +165,7 @@ h2{
 
     .top-buttons button{
         width:55px;
-        height:40px;
+        height:30px;
         font-size:16px;
     }
 
