@@ -1,172 +1,169 @@
+/* =========================
+   Global Styles
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#777;
+    background: url("images/clocks.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-h1{
+/* =========================
+   Header
+========================= */
+
+.header{
+    background:brown;
+    color:white;
     text-align:center;
-    color:white;
-    margin:20px;
+    padding:20px;
 }
 
-.calculator{
-    width:415px;
-    margin:auto;
-    background:black;
-    padding:25px;
-    border-radius:30px;
+.header h1{
+    font-size:clamp(1.8rem,4vw,3rem);
 }
 
-h2{
-    color:white;
-    margin-bottom:20px;
-}
+/* =========================
+   Container
+========================= */
 
-#display{
-    width:100%;
-    height:70px;
-    font-size:30px;
-    border:none;
-    border-radius:20px;
-    background:#20cfd4;
-    text-align:right;
-    padding-right:20px;
-    margin-bottom:20px;
-}
-
-.top-buttons{
+.container{
     display:flex;
-    justify-content:flex-end;
-    gap:15px;
-    margin-bottom:25px;
+    justify-content:center;
+    align-items:center;
+    padding:50px 40px;
 }
 
-.red{
-    background:#e31937;
+/* =========================
+   Clock
+========================= */
+
+.clock{
+    width:min(90vw,450px);
+    aspect-ratio:1;
+
+    background:#140232;
+    border-radius:50%;
+    border:8px solid white;
+
+    position:relative;
+    box-shadow:0 0 25px rgba(0,0,0,.5);
 }
 
-.orange{
-    background:orange;
-}
+/* =========================
+   Numbers
+========================= */
 
-.top-buttons button{
-    width:80px;
-    height:55px;
+.number{
+    position:absolute;
     color:white;
-    font-size:22px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+    font-size:clamp(18px,4vw,32px);
+    font-weight:bold;
 }
 
-.buttons{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+/* Number Positions */
+
+.number12{top:3%;left:50%;transform:translateX(-50%);}
+.number1{top:10%;right:20%;}
+.number2{top:22%;right:8%;}
+.number3{top:50%;right:3%;transform:translateY(-50%);}
+.number4{bottom:22%;right:8%;}
+.number5{bottom:10%;right:20%;}
+.number6{bottom:3%;left:50%;transform:translateX(-50%);}
+.number7{bottom:10%;left:20%;}
+.number8{bottom:22%;left:8%;}
+.number9{top:50%;left:3%;transform:translateY(-50%);}
+.number10{top:22%;left:8%;}
+.number11{top:10%;left:20%;}
+
+/* =========================
+   Clock Hands
+========================= */
+
+.hand{
+    position:absolute;
+    left:50%;
+    bottom:50%;
+    transform-origin:bottom;
+    transform:translateX(-50%) rotate(0deg);
+    border-radius:20px;
 }
 
-.buttons button{
-    height:70px;
-    font-size:30px;
-    border:none;
-    background:gray;
-    color:white;
-    cursor:pointer;
-    transition:.3s;
+.hour{
+    width:2%;
+    height:25%;
+    background:white;
 }
 
-.buttons button:hover{
-    background:#9d27ab;
+.minute{
+    width:1.5%;
+    height:34%;
+    background:yellow;
 }
+
+.second{
+    width:0.8%;
+    height:40%;
+    background:red;
+}
+
+/* =========================
+   Center Dot
+========================= */
+
+.center{
+    width:4%;
+    aspect-ratio:1;
+    background:white;
+    border-radius:50%;
+
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* =========================
+   Tablet
+========================= */
 
 @media (max-width:768px){
 
-    .calculator{
-        width:90%;
-        padding:20px;
+    .container{
+        padding-top:35px;
     }
 
-    #display{
-        height:65px;
-        font-size:28px;
-    }
-
-    .buttons button{
-        height:60px;
-        font-size:25px;
-    }
-
-    h1{
-        font-size:40px;
+    .clock{
+        width:350px;
     }
 
 }
+
+/* =========================
+   Mobile
+========================= */
 
 @media (max-width:480px){
 
-    h1{
-        font-size:30px;
-    }
-
-    .calculator{
-        width:95%;
+    .header{
         padding:15px;
-        border-radius:20px;
     }
 
-    #display{
-        height:60px;
-        font-size:24px;
+    .clock{
+        width:280px;
+        border-width:6px;
     }
 
-    .buttons{
-        gap:10px;
-    }
-
-    .buttons button{
-        height:50px;
-        font-size:22px;
-    }
-
-    .top-buttons button{
-        width:55px;
-        height:40px;
+    .number{
         font-size:18px;
-    }
-
-}
-
-@media (max-width:360px){
-
-    .calculator{
-        width:98%;
-        padding:10px;
-    }
-
-    #display{
-        height:50px;
-        font-size:20px;
-    }
-
-    .buttons{
-        gap:8px;
-    }
-
-    .buttons button{
-        height:48px;
-        font-size:18px;
-    }
-
-    .top-buttons button{
-        width:55px;
-        height:30px;
-        font-size:16px;
     }
 
 }
